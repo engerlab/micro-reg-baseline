@@ -8,3 +8,4 @@ RUN mkdir -p $dir_software \
 
 COPY . $dir_software/microReg-Baseline
 
+RUN pip install -r $dir_software/microReg-Baseline/requirements.txt
