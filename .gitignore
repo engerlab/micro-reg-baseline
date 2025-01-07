@@ -1,3 +1,6 @@
+# model weights
+model-weights/*
+! model-weights/.gitkeep
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
