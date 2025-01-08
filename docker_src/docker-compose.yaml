@@ -3,7 +3,8 @@ services:
     build:
       context: ../
       dockerfile: docker_src/Dockerfile
-    image: micro-reg-baseline
+    # image: micro-reg-baseline
+    image: nvidia/cuda:12.6.3-base-ubuntu24.04
     container_name: MicroRegBaseline
     stdin_open: true # docker run -i
     tty: true # docker run -t
@@ -13,3 +14,10 @@ services:
     volumes:
       - ../:/root/Software/microReg-Baseline
       - ${HOST_HOME}:/root/YourLocalHome
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
